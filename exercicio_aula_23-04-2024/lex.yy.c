@@ -738,67 +738,67 @@ case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
 #line 8 "calc.l"
-{}
+{ /* ignore */ }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 10 "calc.l"
-{}
+{ return TOK_PRINT; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 12 "calc.l"
-{}
+{ return '+'; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 13 "calc.l"
-{}
+{ return '-'; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 14 "calc.l"
-{}
+{ return '*'; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 15 "calc.l"
-{}
+{ return '/'; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 16 "calc.l"
-{}
+{ return '('; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 17 "calc.l"
-{}
+{ return ')'; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 18 "calc.l"
-{}
+{ return ';'; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 19 "calc.l"
-{}
+{ return '='; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 21 "calc.l"
-{}
+{ return TOK_IDENT;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 23 "calc.l"
-{}
+{ return TOK_FLOAT; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 25 "calc.l"
-{}
+{ return TOK_INT; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
