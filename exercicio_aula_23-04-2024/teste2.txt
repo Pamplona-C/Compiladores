@@ -1,0 +1,7 @@
+int i;
+i = 5;
+float b;
+b = 10;
+ 
+C = i + b;
+print C;
