@@ -1,4 +1,4 @@
-se (a == b) { 
+se (VERDADE) { 
  a=a+1;
 }
 

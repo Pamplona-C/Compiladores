@@ -20,8 +20,10 @@ int yyerror(const char *s);
 "senao"    { return TOK_SENAO; }
 "enquanto" { return TOK_WHILE; }
 "&&"       { return TOK_AND; }
-"ou"       { return TOK_OR; }
+"OU"       { return TOK_OR; }
 [<>!{}]	   { return yytext[0]; }
+"VERDADE"  { return TOK_TRUE; }
+"FALSO"    { return TOK_FALSE; }
 
 
 
@@ -47,10 +49,6 @@ int yyerror(const char *s);
   }
 
 %%
-
-
-
-
 
 int yywrap(){
 	return 1;

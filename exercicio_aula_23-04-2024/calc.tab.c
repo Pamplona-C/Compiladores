@@ -69,10 +69,12 @@
 /* First part of user prologue.  */
 #line 2 "calc.y"
 
+#include "nodes.h"
+
 int yyerror(const char *s);
 int yylex(void);
 
-#line 76 "calc.tab.c"
+#line 78 "calc.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -450,7 +452,7 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  8
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   25
+#define YYLAST   27
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  15
@@ -509,8 +511,8 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    18,    18,    20,    23,    26,    29,    32,    35,    38,
-      41,    44,    47,    50,    53,    56,    59,    62,    65
+       0,    20,    20,    22,    25,    28,    31,    34,    37,    40,
+      43,    46,    49,    52,    55,    58,    61,    64,    67
 };
 #endif
 
@@ -539,7 +541,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-14)
+#define YYPACT_NINF (-7)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -553,10 +555,10 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      12,    -6,     0,    17,    12,   -14,    -1,    15,   -14,   -14,
-     -14,   -14,   -14,    -1,    -1,    -2,     8,   -14,   -14,   -14,
-       8,     4,   -14,    -1,    -1,    -1,    -1,   -14,     8,     8,
-     -14,   -14
+      11,    -6,    21,     6,    11,    -7,    -3,    19,    -7,    -7,
+      -7,    -7,    -7,    -3,    -3,     3,     5,    -7,    -7,    -7,
+       9,    -5,    -7,    -3,    -3,    -3,    -3,    -7,     5,     5,
+      -7,    -7
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -573,7 +575,7 @@ static const yytype_int8 yydefact[] =
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -14,   -14,   -14,    20,    11,   -13,    -4,   -14
+      -7,    -7,    -7,     4,     7,    -1,     0,    -7
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
@@ -587,16 +589,16 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      20,     6,    10,     7,    11,    12,    22,    23,    24,    13,
-      28,    29,    14,    23,    24,     1,     2,     8,    27,    25,
-      26,    30,    31,    19,     9,    21
+      10,     6,    11,    12,    23,    24,     8,    13,     9,    27,
+      14,    22,    23,    24,     1,     2,    25,    26,    23,    24,
+      20,    21,    28,    29,     7,    30,    31,    19
 };
 
 static const yytype_int8 yycheck[] =
 {
-      13,     7,     3,     3,     5,     6,     8,     9,    10,    10,
-      23,    24,    13,     9,    10,     3,     4,     0,    14,    11,
-      12,    25,    26,     8,     4,    14
+       3,     7,     5,     6,     9,    10,     0,    10,     4,    14,
+      13,     8,     9,    10,     3,     4,    11,    12,     9,    10,
+      13,    14,    23,    24,     3,    25,    26,     8
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
@@ -605,7 +607,7 @@ static const yytype_int8 yystos[] =
 {
        0,     3,     4,    16,    17,    18,     7,     3,     0,    18,
        3,     5,     6,    10,    13,    19,    20,    21,    22,     8,
-      20,    19,     8,     9,    10,    11,    12,    14,    20,    20,
+      19,    19,     8,     9,    10,    11,    12,    14,    20,    20,
       21,    21
 };
 
@@ -1354,119 +1356,119 @@ yyreduce:
   switch (yyn)
     {
   case 3: /* globals: globals global  */
-#line 20 "calc.y"
+#line 22 "calc.y"
                          {
 }
-#line 1361 "calc.tab.c"
+#line 1363 "calc.tab.c"
     break;
 
   case 4: /* globals: global  */
-#line 23 "calc.y"
+#line 25 "calc.y"
                  {
 }
-#line 1368 "calc.tab.c"
+#line 1370 "calc.tab.c"
     break;
 
   case 5: /* global: TOK_IDENT '=' expr ';'  */
-#line 26 "calc.y"
+#line 28 "calc.y"
                                 {
 }
-#line 1375 "calc.tab.c"
+#line 1377 "calc.tab.c"
     break;
 
   case 6: /* global: TOK_PRINT TOK_IDENT ';'  */
-#line 29 "calc.y"
+#line 31 "calc.y"
                                  {
 }
-#line 1382 "calc.tab.c"
+#line 1384 "calc.tab.c"
     break;
 
   case 7: /* expr: expr '+' term  */
-#line 32 "calc.y"
+#line 34 "calc.y"
                      {
 }
-#line 1389 "calc.tab.c"
+#line 1391 "calc.tab.c"
     break;
 
   case 8: /* expr: expr '-' term  */
-#line 35 "calc.y"
+#line 37 "calc.y"
                      {
 }
-#line 1396 "calc.tab.c"
+#line 1398 "calc.tab.c"
     break;
 
   case 9: /* expr: term  */
-#line 38 "calc.y"
+#line 40 "calc.y"
             {
 }
-#line 1403 "calc.tab.c"
+#line 1405 "calc.tab.c"
     break;
 
   case 10: /* term: term '*' factor  */
-#line 41 "calc.y"
+#line 43 "calc.y"
                        {
 }
-#line 1410 "calc.tab.c"
+#line 1412 "calc.tab.c"
     break;
 
   case 11: /* term: term '/' factor  */
-#line 44 "calc.y"
+#line 46 "calc.y"
                        {
 }
-#line 1417 "calc.tab.c"
+#line 1419 "calc.tab.c"
     break;
 
   case 12: /* term: factor  */
-#line 47 "calc.y"
+#line 49 "calc.y"
               {
 }
-#line 1424 "calc.tab.c"
+#line 1426 "calc.tab.c"
     break;
 
   case 13: /* factor: '(' expr ')'  */
-#line 50 "calc.y"
+#line 52 "calc.y"
                       {
 }
-#line 1431 "calc.tab.c"
+#line 1433 "calc.tab.c"
     break;
 
   case 14: /* factor: TOK_IDENT  */
-#line 53 "calc.y"
+#line 55 "calc.y"
                    {
 }
-#line 1438 "calc.tab.c"
+#line 1440 "calc.tab.c"
     break;
 
   case 15: /* factor: TOK_INT  */
-#line 56 "calc.y"
+#line 58 "calc.y"
                  {
 }
-#line 1445 "calc.tab.c"
+#line 1447 "calc.tab.c"
     break;
 
   case 16: /* factor: TOK_FLOAT  */
-#line 59 "calc.y"
+#line 61 "calc.y"
                    {
 }
-#line 1452 "calc.tab.c"
+#line 1454 "calc.tab.c"
     break;
 
   case 17: /* factor: unary  */
-#line 62 "calc.y"
+#line 64 "calc.y"
                {
 }
-#line 1459 "calc.tab.c"
+#line 1461 "calc.tab.c"
     break;
 
-  case 18: /* unary: '-' term  */
-#line 65 "calc.y"
+  case 18: /* unary: '-' expr  */
+#line 67 "calc.y"
                  {
 }
-#line 1466 "calc.tab.c"
+#line 1468 "calc.tab.c"
     break;
 
 
-#line 1470 "calc.tab.c"
+#line 1472 "calc.tab.c"
 
       default: break;
     }
@@ -1690,5 +1692,5 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 68 "calc.y"
+#line 70 "calc.y"
 

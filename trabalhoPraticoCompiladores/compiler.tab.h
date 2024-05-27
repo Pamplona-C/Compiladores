@@ -63,7 +63,9 @@ extern int yydebug;
     TOK_SENAO = 264,               /* TOK_SENAO  */
     TOK_WHILE = 265,               /* TOK_WHILE  */
     TOK_AND = 266,                 /* TOK_AND  */
-    TOK_OR = 267                   /* TOK_OR  */
+    TOK_OR = 267,                  /* TOK_OR  */
+    TOK_TRUE = 268,                /* TOK_TRUE  */
+    TOK_FALSE = 269                /* TOK_FALSE  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif

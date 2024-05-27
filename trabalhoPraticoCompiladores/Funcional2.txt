@@ -1,7 +1,9 @@
  a=0;
+ b=4;
+ c=10;
  enquanto (a != 1)
  {
- 	se(a>1)
+ 	se(a>1 OU b>5 && c<5)
  	{
  	a=a+1;
 	}

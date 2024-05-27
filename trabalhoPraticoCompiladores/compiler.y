@@ -17,6 +17,8 @@ int yylex(void);
 %token TOK_WHILE
 %token TOK_AND
 %token TOK_OR
+%token TOK_TRUE
+%token TOK_FALSE
 
 %start program
 
@@ -44,14 +46,20 @@ segundacondicao : TOK_SENAO condicao '{' globals '}' segundacondicao
                 ;
 
 condicao : '(' condicao ')'
-         |expr '<' expr
+         | expr '<' expr
          | expr '>' expr
          | expr '=''=' expr
          | expr '<''=' expr
          | expr '>''=' expr
          | expr '!''=' expr
+         | condicao TOK_OR condicao
+         | condicao TOK_AND condicao
+         | boolean
          ;
 
+boolean : TOK_TRUE
+        | TOK_FALSE
+        ;
 expr : expr '+' term
      | expr '-' term
      | term
