@@ -31,6 +31,7 @@ globals : globals global
         ;
 
 global : TOK_IDENT '=' expr ';'
+       | TOK_IDENT '=' ident_boolean ';'
        | TOK_ESCREVA '>' TOK_IDENT ';'
        | TOK_SE condicao '{' globals '}' segundacondicao
        | TOK_SE condicao '{' globals '}'
@@ -60,6 +61,9 @@ condicao : '(' condicao ')'
 boolean : TOK_TRUE
         | TOK_FALSE
         ;
+
+ident_boolean : boolean ;
+
 expr : expr '+' term
      | expr '-' term
      | term
@@ -75,7 +79,7 @@ factor : '(' expr ')'
        | TOK_INTEIRO
        | TOK_FLOAT
        | unary
-       ;
+       ;      
 
 unary : '-' expr
       ;

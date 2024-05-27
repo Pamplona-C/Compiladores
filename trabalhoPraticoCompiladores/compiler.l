@@ -12,7 +12,7 @@ int yyerror(const char *s);
 
 [ \t\r\n] { /* ignora */}
 
-"//".*\n { /* ignore */ }
+"//".*\n { /* ignora */ }
 
 "escreva"  { return TOK_ESCREVA; }
 "de" 	   { return TOK_FOR; }
