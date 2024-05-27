@@ -47,17 +47,23 @@ segundacondicao : TOK_SENAO condicao '{' globals '}' segundacondicao
                 ;
 
 condicao : '(' condicao ')'
-         | expr '<' expr
-         | expr '>' expr
-         | expr '=''=' expr
-         | expr '<''=' expr
-         | expr '>''=' expr
-         | expr '!''=' expr
-         | condicao TOK_OR condicao
-         | condicao TOK_AND condicao
-         | boolean
+         | exprRelacional logical
+         | exprRelacional
+         | boolean   
          ;
 
+exprRelacional : expr '<' expr
+              | expr '>' expr
+              | expr '=''=' expr
+              | expr '<''=' expr
+              | expr '>''=' expr
+              | expr '!''=' expr
+              ;
+
+logical : TOK_OR condicao
+        | TOK_AND condicao
+        ;
+     
 boolean : TOK_TRUE
         | TOK_FALSE
         ;
@@ -81,7 +87,7 @@ factor : '(' expr ')'
        | unary
        ;      
 
-unary : '-' expr
+unary : '-' factor
       ;
 
 %%

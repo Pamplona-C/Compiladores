@@ -6,7 +6,7 @@
  f = FALSO;
  enquanto (a != 1)
  {
- 	se(VERDADE)	
+ 	se(a>10 && b<10)	
  	{
  	a=a+1;
 	}
