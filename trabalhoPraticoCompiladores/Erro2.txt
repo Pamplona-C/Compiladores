@@ -1,0 +1,18 @@
+ a=0;
+ while (a != 1)
+ {
+ 	se(a>1)
+ 	{
+ 	a=a+1;
+	}
+	
+	senao{
+	a=1
+	}
+		
+ }
+ 
+ for (a = int; a > 3; a=a-1)
+ {
+  printf a;
+ }

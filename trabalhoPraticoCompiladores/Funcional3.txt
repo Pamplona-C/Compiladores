@@ -1,0 +1,7 @@
+se (a == b) { 
+ a=a+1;
+}
+
+escreva > a;
+		
+		

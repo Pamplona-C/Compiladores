@@ -1,0 +1,4 @@
+
+ a+b = c;
+ ope*e = resultado;
+ Cos(a) = sen;
