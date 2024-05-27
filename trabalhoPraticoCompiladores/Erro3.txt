@@ -1,0 +1,4 @@
+ for (a = int; a > 3; a=a-1)
+ {
+  printf a;
+ }	
