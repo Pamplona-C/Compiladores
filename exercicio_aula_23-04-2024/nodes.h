@@ -13,6 +13,8 @@ public:
 	virtual string toStr() {
 		return "node";
 	}
+	void append(Node *n){
+		children.push_back(n);	}
 	
 };
 
@@ -55,6 +57,21 @@ public:
 	}	
 };
 
+class Variable : public Node {
+protected:
+	string name;
+	Node *value;
+public:
+	Variable(const string n, Node *v){
+		name = n;
+		value = v;
+	}
+	
+	virtual string toStr() override {
+		return name;
+	}	
+};
+
 class Unary : public Node {
 protected:
 	Node *value;
@@ -73,14 +90,14 @@ public:
 	}	
 };
 
-class Binary : public Node {
+class BinaryOp : public Node {
 protected:
     Node *value1;
     Node *value2;
     char operation;
     
 public:
-	Binary(Node *v1, Node *v2 , char op){
+	BinaryOp(Node *v1, Node *v2 , char op){
 		value1 = v1;
 		value2 = v2;
 		operation = op;
@@ -93,7 +110,7 @@ public:
 	}	
 };
 
-class Print {
+class Print : public Node{
 protected:
 	Node *value;
 	

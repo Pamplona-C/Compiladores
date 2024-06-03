@@ -482,11 +482,14 @@ char *yytext;
 #line 1 "calc.l"
 #line 3 "calc.l"
 #include <stdio.h>
+class Node;
 #include "calc.tab.h"
+#include <stdlib.h>
+
 
 int yyerror(const char *s);
-#line 489 "lex.yy.c"
-#line 490 "lex.yy.c"
+#line 492 "lex.yy.c"
+#line 493 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -703,10 +706,10 @@ YY_DECL
 		}
 
 	{
-#line 11 "calc.l"
+#line 14 "calc.l"
 
 
-#line 710 "lex.yy.c"
+#line 713 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -776,78 +779,87 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 13 "calc.l"
+#line 16 "calc.l"
 { /* ignora */}
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 15 "calc.l"
+#line 18 "calc.l"
 { /* ignore */ }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 17 "calc.l"
+#line 20 "calc.l"
 { return TOK_PRINT; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 19 "calc.l"
+#line 22 "calc.l"
 { return '+'; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 20 "calc.l"
+#line 23 "calc.l"
 { return '-'; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 21 "calc.l"
+#line 24 "calc.l"
 { return '*'; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 22 "calc.l"
+#line 25 "calc.l"
 { return '/'; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 23 "calc.l"
+#line 26 "calc.l"
 { return '('; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 24 "calc.l"
+#line 27 "calc.l"
 { return ')'; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 25 "calc.l"
+#line 28 "calc.l"
 { return ';'; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 26 "calc.l"
+#line 29 "calc.l"
 { return '='; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 28 "calc.l"
-{ return TOK_IDENT;}
+#line 31 "calc.l"
+{ 
+	yylval.str = strndup(yytext, yyleng);
+	return TOK_IDENT;
+}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 30 "calc.l"
-{ return TOK_FLOAT; }
+#line 36 "calc.l"
+{
+	yylval.flt = atof(yytext); 
+	return TOK_FLOAT; 
+	}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 32 "calc.l"
-{ return TOK_INT; }
+#line 41 "calc.l"
+{ 
+	yylval.itg = atoi(yytext);
+	return TOK_INT; 
+	}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 34 "calc.l"
+#line 46 "calc.l"
 { 
 
 	printf("Símbolo não reconhecido %c\n", yytext[0]); 
@@ -856,10 +868,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 40 "calc.l"
+#line 52 "calc.l"
 ECHO;
 	YY_BREAK
-#line 863 "lex.yy.c"
+#line 875 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1876,7 +1888,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 40 "calc.l"
+#line 52 "calc.l"
 
 
 
