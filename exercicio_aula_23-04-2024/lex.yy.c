@@ -1892,7 +1892,7 @@ void yyfree (void * ptr )
 
 
 
-
+extern int errorcount;
 
 
 int yywrap(){
@@ -1900,7 +1900,8 @@ int yywrap(){
 }
 
 int yyerror(const char *s){
-	printf("Erro de sintaxe na linha %d: %s\n", yylineno, s);
+	printf("Syntax Error%d: %s\n", yylineno, s);
+	errorcount++;
 	return 1;
 }
 
